@@ -36,7 +36,7 @@ coins = [50, 25, 10, 5, 2, 1]
 assert find_coins_greedy(113) == {1: 1, 2: 1, 10: 1, 50: 2}
 assert find_min_coins(113) == {1: 1, 2: 1, 10: 1, 50: 2}
 
-amounts = [8, 17, 39, 61, 128, 250, 500, 1008, 2049, 4096]
+amounts = [3, 7, 8, 9, 10, 250, 500, 1009, 2049, 4097]
 results = []
 
 for amount in amounts:
@@ -51,13 +51,13 @@ for amount in amounts:
     time_dp = timeit.timeit(lambda: find_min_coins(amount), number=1000)
     results.append([amount, time_greedy, time_dp, coins_greedy, coins_dp])
 
-print("--- coins = [50, 25, 10, 5, 2, 1] ---")
+print("--- coins", coins)
 print(f"{'Amount':>8} | {'greedy (s)':>14} | {'DP (s)':>14} | {'coins_G':>8} | {'coins_DP':>8}")
 for result in results:
     print(f"{result[0]:>8} | {result[1]:>14.8f} | {result[2]:>14.8f} | {result[3]:>8} | {result[4]:>8}")
 
-coins = [1, 3, 4]
-amounts = [8, 17, 39, 61, 128, 250, 500, 1008, 2049, 4096]
+coins = [5, 4, 3, 2, 1]
+amounts = [3, 7, 8, 9, 10, 250, 500, 1009, 2048, 4096]
 results = []
 
 for amount in amounts:    
@@ -72,7 +72,7 @@ for amount in amounts:
     time_dp = timeit.timeit(lambda: find_min_coins(amount), number=1000)
     results.append([amount, time_greedy, time_dp, coins_greedy, coins_dp])
 
-print("--- coins = [1, 3, 4] ---")
+print("--- coins", coins)
 print(f"{'Amount':>8} | {'greedy (s)':>14} | {'DP (s)':>14} | {'coins_G':>8} | {'coins_DP':>8}")
 for result in results:
     print(f"{result[0]:>8} | {result[1]:>14.8f} | {result[2]:>14.8f} | {result[3]:>8} | {result[4]:>8}")
