@@ -38,10 +38,13 @@ def find_min_coins(amount):
 assert find_coins_greedy(113) == {1: 1, 2: 1, 10: 1, 50: 2}
 assert find_min_coins(113) == {1: 1, 2: 1, 10: 1, 50: 2}
 
-amounts = [8, 16, 32, 64, 128, 256, 512, 1024, 2048, 4096]
+amounts = [8, 17, 39, 61, 128, 250, 500, 1008, 2049, 4096]
 results = []
 
 for amount in amounts:
+    print(amount)
+    print(find_coins_greedy(amount))
+    print(find_min_coins(amount))
     time_greedy = timeit.timeit(lambda: find_coins_greedy(amount), number=1000)
     time_dp = timeit.timeit(lambda: find_min_coins(amount), number=1000)
     results.append([amount, time_greedy, time_dp])
